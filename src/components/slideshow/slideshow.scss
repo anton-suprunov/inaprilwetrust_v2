@@ -1,0 +1,35 @@
+.slideshow {
+  width: 1200px;
+  margin: 0 auto;
+
+  .slick-slide {
+    padding: 0 20px;
+  }
+
+  .slick-list {
+    margin: 0 2em;
+  }
+}
+
+.slideshow-page {
+  display: flex !important;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.slideshow-slide {
+  width: 500px;
+  height: 743px;
+  overflow: hidden;
+}
+
+.slideshow-frame {
+  height: 743px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-img {
+  max-width: 500px;
+}

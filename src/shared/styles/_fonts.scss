@@ -1,0 +1,11 @@
+@font-face {
+  font-family: $font-default;
+  src: url('/fonts/helvetica-condensed-light-webfont.eot');
+  src: url('/fonts/helvetica-condensed-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/helvetica-condensed-light-webfont.woff2') format('woff2'),
+    url('/fonts/helvetica-condensed-light-webfont.woff') format('woff'),
+    url('/fonts/helvetica-condensed-light-webfont.ttf') format('truetype'),
+    url('/fonts/helvetica-condensed-light-webfont.svg#helvetica_condensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
