@@ -8,14 +8,12 @@ import Nav from "../components/nav"
 import "./index.scss";
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Home" showHeader={false}>
     <SEO title="home" />
     <div className="home-page">
-      <span className="home-page__bg" />
-      <div className="home-page__content">
-        <Nav />
-        {/*<Link to="/album/"></Link>*/}
-      </div>
+
+      <Nav />
+      {/*<Link to="/album/"></Link>*/}
     </div>
   </Layout>
 )

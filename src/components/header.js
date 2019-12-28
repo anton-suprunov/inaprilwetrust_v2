@@ -2,20 +2,17 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <h1 style={{ margin: 0 }}>
-      <Link to="/"></Link>
-    </h1>
+import "./header.scss";
+
+const Header = ({ pageTitle }) => (
+  <header className="site-title">
+    <Link to="/">Inaprilwetrust</Link>
+    <span>« {pageTitle}</span>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  pageTitle: PropTypes.string,
 }
 
 export default Header
