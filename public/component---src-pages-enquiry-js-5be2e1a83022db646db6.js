@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{X7LJ:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),i=(a("Wbzz"),a("Bl7J")),l=a("vrFN");t.default=function(){return r.a.createElement(i.a,{pageTitle:"Enquiry",showHeader:!0},r.a.createElement(l.a,{title:"Enquiry"}),r.a.createElement("nav",{className:"nav"},r.a.createElement("a",{href:"mailto:inaprilwetrust@gmail.com",style:{color:"#666",textDecoration:"none",fontSize:"16px"}},"inaprilwetrust@gmail.com")))}}}]);
+//# sourceMappingURL=component---src-pages-enquiry-js-5be2e1a83022db646db6.js.map
