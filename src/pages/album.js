@@ -1,16 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+//import { Link } from "gatsby";
+import { Router } from "@reach/router";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
+const AlbumContent = (props) => {
+  console.log(props);
+  return <div>test</div>;
+}
+
+const Album = () => (
+  <Layout pageTitle="Album" showHeader={true}>
     <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    
+    <Router>
+      {/*<Redirect from="/album/" to="/" />*/}
+      <AlbumContent path="/album/:albumName" />
+    </Router>
+    
   </Layout>
 )
 
-export default SecondPage
+export default Album;
