@@ -1,40 +1,15 @@
 import React, { useState } from 'react';
 import classnames from "classnames";
-import { Link, graphql, StaticQuery } from "gatsby";
+import { Link  } from "gatsby";
+import useAlbums from "../../queries/useAlbums";
+import useLinks from "../../queries/useLinks";
 
 import "./nav.scss";
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allAlbumsJson {
-          edges {
-            node {
-              title
-              url
-            }
-          }
-        }
-        allLinksJson {
-          edges {
-            node {
-              title
-              type
-              url
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      return <Nav albums={data.allAlbumsJson.edges} links={data.allLinksJson.edges} />;
-    }}
-  />
-)
-
-const Nav = ({ albums, links }) => {
+const Nav = () => {
   const [activeSection, setActiveSection] = useState('');
+  const albums = useAlbums();
+  const links = useLinks();
 
   return <nav className="nav">
     {/*<h4 className="nav__title">inaprilwetrust</h4>*/}
@@ -80,3 +55,5 @@ const Nav = ({ albums, links }) => {
     </div>
   </nav>;
 }
+
+export default Nav;
