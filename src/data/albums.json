@@ -1,15 +1,15 @@
 [
   {
     "title": "Polaroids",
-    "url": "/album/polaroids"
+    "key": "polaroids"
   }, {
     "title": "Mannequins",
-    "url": "/album/mannequins"
+    "key": "mannequins"
   }, {
     "title": "Odessa",
-    "url": "/album/odessa"
+    "key": "odessa"
   }, {
     "title": "11thfloor",
-    "url": "/album/11thfloor"
+    "key": "11thfloor"
   }
 ]

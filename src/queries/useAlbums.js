@@ -8,7 +8,7 @@ const useAlbums = () => {
           edges {
             node {
               title
-              url
+              key
             }
           }
         }

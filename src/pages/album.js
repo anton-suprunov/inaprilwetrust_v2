@@ -2,13 +2,10 @@ import React from "react";
 //import { Link } from "gatsby";
 import { Router } from "@reach/router";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const AlbumContent = (props) => {
-  console.log(props);
-  return <div>test</div>;
-}
+import AlbumContent from "../components/album/album";
 
 const Album = () => (
   <Layout pageTitle="Album" showHeader={true}>
@@ -16,7 +13,7 @@ const Album = () => (
     
     <Router>
       {/*<Redirect from="/album/" to="/" />*/}
-      <AlbumContent path="/album/:albumName" />
+      <AlbumContent path="/album/:albumKey" />
     </Router>
     
   </Layout>
