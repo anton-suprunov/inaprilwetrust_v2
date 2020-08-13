@@ -49,7 +49,7 @@ const Nav = () => {
       "nav__section_active": activeSection === 'album'
     })}>
       {albums.map((album, i) => (
-        <Link to={`/album/${album.node.key}`} className="nav__link" key={i}>{album.node.title}</Link>
+        <Link to={`/album/${album.key}`} className="nav__link" key={i}>{album.title}</Link>
       ))}
       <span className="nav__reset" onClick={() => setActiveSection('')}>menu</span>
     </div>

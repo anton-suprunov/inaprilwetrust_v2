@@ -1,12 +1,10 @@
 import React from "react";
 
-import useAlbums from "../../queries/useAlbums";
+import useAlbum from "../../queries/useAlbum";
 
-const Album = (props) => {
-  const albums = useAlbums();
-  const album = albums.find(a => a.node.key === props.albumKey);
-
-  console.log(props, album);
+const Album = ({ album }) => {
+  console.log(album);
+  const photos = useAlbum(album.key);
   
   return <div>
     

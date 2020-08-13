@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby";
+import map from "lodash/map";
 
 const useAlbums = () => {
   const data = useStaticQuery(
@@ -15,7 +16,7 @@ const useAlbums = () => {
       }
     `
   )
-  return data.allAlbumsJson.edges;
+  return map(data.allAlbumsJson.edges, "node");
 }
 
 export default useAlbums;
