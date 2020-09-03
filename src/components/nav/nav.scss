@@ -48,12 +48,10 @@
   align-items: center;
   transition: height, opacity .2s ease-in;
   justify-content: center;
-
   height: 0;
   overflow: hidden;
   opacity: 0;
   min-width: 0%;
-  
 
   &_active {
     overflow: visible;
@@ -65,11 +63,13 @@
   }
 
   &_text {
-    margin-left: -150px;
-    margin-right: -150px;
     font-size: 14px;
     line-height: 24px;
     cursor: pointer;
+
+    &.nav__section_active {
+      min-width: 650px;
+    }
   }
 }
 

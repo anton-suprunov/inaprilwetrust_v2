@@ -26,16 +26,16 @@ const Nav = () => {
           <a href="#" className="nav__link"
             onClick={(e) => {
               e.preventDefault();
-              setActiveSection("text");
+              setActiveSection(`text${type.replace('albums', '')}`);
+              console.log(activeSection);
             }}>{title}</a>}
 
       </React.Fragment>)}
     </div>
 
     <div className={classnames("nav__section nav__section_text", {
-      "nav__section_active": activeSection === "text"
-    })} onClick={() => setActiveSection('album')}>
-
+      "nav__section_active": activeSection === "text1"
+    })} onClick={() => setActiveSection('album1')}>
       Dedicated to Valeria Koshkina, incredibly bright and charismatic fairy alien, who suffered from anorexia.
       When I found out about her death (my love for her is beyond any comments), I was overwhelmed with a strong feeling of guilt.
       I felt guilty for all of us, who worship the media cult of the skinny and support fake destructive stereotypes of beauty.
@@ -45,8 +45,24 @@ const Nav = () => {
       You can enter the doors. Or you can stand in front of them.
     </div>
 
+    <div className={classnames("nav__section nav__section_text", {
+      "nav__section_active": activeSection === "text2"
+    })} onClick={() => setActiveSection('album2')}>
+      The things they lived. The things they left behind.
+    </div>
+    
+
     <div className={classnames("nav__section nav__section_albums", {
-      "nav__section_active": activeSection === 'album'
+      "nav__section_active": activeSection === 'album1'
+    })}>
+      {albums.map((album, i) => (
+        <Link to={`/album/${album.key}`} className="nav__link" key={i}>{album.title}</Link>
+      ))}
+      <span className="nav__reset" onClick={() => setActiveSection('')}>menu</span>
+    </div>
+
+    <div className={classnames("nav__section nav__section_albums", {
+      "nav__section_active": activeSection === 'album2'
     })}>
       {albums.map((album, i) => (
         <Link to={`/album/${album.key}`} className="nav__link" key={i}>{album.title}</Link>

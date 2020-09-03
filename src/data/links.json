@@ -3,10 +3,16 @@
     "type": "external",
     "url": "http://rodovid.net/en/product/204/anastasija-lazurenko-pearly-gates-peredplata/",
     "title": "Book"
-  }, {
-    "type": "albums",
+  }, 
+  {
+    "type": "albums1",
     "title": "Pearly Gates"
-  }, {
+  }, 
+  {
+    "type": "albums2",
+    "title": "IHeaven"
+  },
+  {
     "type": "static",
     "title": "Enquiry",
     "url": "/enquiry"
