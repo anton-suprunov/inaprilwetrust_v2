@@ -1,19 +1,34 @@
 [
   {
     "title": "Polaroids",
-    "key": "polaroids"
+    "key": "polaroids",
+    "category": "pearlygates"
   }, {
     "title": "Mannequins",
-    "key": "mannequins"
+    "key": "mannequins",
+    "category": "pearlygates"
   }, {
     "title": "Odessa",
-    "key": "odessa"
+    "key": "odessa",
+    "category": "pearlygates"
   }, {
     "title": "11thfloor",
-    "key": "elevenththfloor"
+    "key": "elevenththfloor",
+    "category": "pearlygates"
   },
   { 
-    "title": "Rubinsteina",
-    "key": "rubinsteina"
+    "title": "Byelorussia",
+    "key": "byelorussia",
+    "category": "iheaven"
+  },
+  { 
+    "title": "Kiev",
+    "key": "kiev",
+    "category": "iheaven"
+  },
+  { 
+    "title": "Rubinsteina, 1",
+    "key": "rubinsteina1",
+    "category": "iheaven"
   }
 ]

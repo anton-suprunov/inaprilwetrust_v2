@@ -10,6 +10,7 @@ const useAlbums = () => {
             node {
               title
               key
+              category
             }
           }
         }

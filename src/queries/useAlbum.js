@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby";
-//import map from "lodash/map";
+import map from "lodash/map";
 
 const useAlbum = (album) => {
   let albumKey = `all${album.charAt(0).toUpperCase() + album.slice(1)}Json`;
@@ -7,7 +7,7 @@ const useAlbum = (album) => {
   const data = useStaticQuery(
     graphql`
       query {
-        allRubinsteinaJson {
+        allRubinsteina1Json {
           edges {
             node {
               _0
@@ -26,11 +26,13 @@ const useAlbum = (album) => {
       }
     `
   )
-  if (data[albumKey]) {
-    console.log(data[albumKey]);
+
+  if (!data[albumKey]) {
+    return [];
   }
-  
-  //return map(data.allAlbumsJson.edges, "node");
+
+  const res = map(data[albumKey].edges, "node");
+  return res;
 }
 
 export default useAlbum;

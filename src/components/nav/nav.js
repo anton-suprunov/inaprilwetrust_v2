@@ -10,6 +10,8 @@ const Nav = () => {
   const [activeSection, setActiveSection] = useState('');
   const albums = useAlbums();
   const links = useLinks();
+  
+  console.log(albums);
 
   return <nav className="nav">
     {/*<h4 className="nav__title">inaprilwetrust</h4>*/}
@@ -55,7 +57,7 @@ const Nav = () => {
     <div className={classnames("nav__section nav__section_albums", {
       "nav__section_active": activeSection === 'album1'
     })}>
-      {albums.map((album, i) => (
+      {albums.filter(a => a.category === 'pearlygates').map((album, i) => (
         <Link to={`/album/${album.key}`} className="nav__link" key={i}>{album.title}</Link>
       ))}
       <span className="nav__reset" onClick={() => setActiveSection('')}>menu</span>
@@ -64,7 +66,7 @@ const Nav = () => {
     <div className={classnames("nav__section nav__section_albums", {
       "nav__section_active": activeSection === 'album2'
     })}>
-      {albums.map((album, i) => (
+      {albums.filter(a => a.category === 'iheaven').map((album, i) => (
         <Link to={`/album/${album.key}`} className="nav__link" key={i}>{album.title}</Link>
       ))}
       <span className="nav__reset" onClick={() => setActiveSection('')}>menu</span>
