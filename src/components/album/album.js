@@ -1,6 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useRef, useReducer } from "react";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 import useAlbum from "../../queries/useAlbum";
+import SlideItem from "./SlideItem";
+
+import "./Album.scss"
 
 const preloadImages = async (arr) => {
   const queue = arr.map(src => {
@@ -16,31 +21,37 @@ const preloadImages = async (arr) => {
 }
 
 const Album = ({ album }) => {
-  console.log(album);
+  const [activeSlide, setActiveSlide] = useState(0);
+    
   const photos = useAlbum(album.key);
   useEffect(() => {
     const init = async () => {
       const preloadArray = photos.map(slide => {
         return [...slide['_0'], ...slide['_1']].map(i => `/photos/${album.key}/${i}.jpg`);
       }).flat();
-      console.log(preloadArray)
+      //console.log(preloadArray)
       await preloadImages(preloadArray);
       console.log('--IMAGES LOADED--')
     }
     init();
   }, []);
   
+  const onSlideChange = ({ currentIndex }) => {
+    setActiveSlide(currentIndex)
+  }
 
-
-  //console.log(photos)
-  return <div>
-    {
-      photos.map((slide, i) => <div key={`slide-${i}`}>
-        {slide['_0'].map(j => <img key={`slide-1-${j}`} src={`/photos/${album.key}/${j}.jpg`} style={{maxWidth: '100px'}} />)}
-        <br /><br />
-        {slide['_1'].map(j => <img key={`slide-2-${j}`} src={`/photos/${album.key}/${j}.jpg`} style={{maxWidth: '100px'}} />)}
-      </div>)
-    }
+  const slides = photos.map((slide, i) => (
+    <div key={`slide-${i}`}><SlideItem key={`slide-item-${i}`} slide={slide} albumKey={album.key} /></div>
+  ));
+  
+  return <div className="album">
+    <AwesomeSlider organicArrows={false} 
+      bullets={false} 
+      //selected={activeSlide}
+      onTransitionEnd={onSlideChange}
+    >
+      {slides}
+    </AwesomeSlider>
   </div>;
 }
 
